@@ -10,5 +10,12 @@ func HasConsonantSuffix(s string) bool {
 	numEnds := 28
 	result := false
 
-	return true
+	for _, r := range s {
+		if r >= start && r < end {
+			index := int(r - start)
+			result = index%numEnds != 0
+		}
+	}
+
+	return result
 }
